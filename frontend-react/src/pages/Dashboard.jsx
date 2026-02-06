@@ -146,13 +146,13 @@ const Dashboard = ({ authHeader, onLogout, darkMode, toggleDarkMode }) => {
     };
 
     return (
-        <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+        <div className="min-h-screen bg-background text-foreground transition-colors duration-300 flex flex-col">
             {/* Navbar */}
             <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
                 <div className="container mx-auto flex h-16 items-center justify-between px-4">
                     <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                            <Beaker className="h-5 w-5" />
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary-foreground overflow-hidden">
+                            <img src="/image.png" alt="Logo" className="h-8 w-8 object-contain" />
                         </div>
                         <div>
                             <h1 className="text-lg font-bold tracking-tight">Chemical Equipments Parameter Visualizer</h1>
@@ -184,7 +184,7 @@ const Dashboard = ({ authHeader, onLogout, darkMode, toggleDarkMode }) => {
 
 
 
-            <main className="container mx-auto py-8 px-4 space-y-8">
+            <main className="container mx-auto py-8 px-4 space-y-8 flex-1">
                 {/* Hero Section */}
                 <div className="relative overflow-hidden rounded-2xl bg-card p-8 border border-border shadow-lg">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 animate-pulse" />
@@ -394,7 +394,7 @@ const Dashboard = ({ authHeader, onLogout, darkMode, toggleDarkMode }) => {
                             <Card className="lg:col-span-4">
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <Activity className="h-5 w-5 text-primary" />
+                                        <img src="/bar-graph.png" alt="Distribution" className="h-6 w-6 object-contain" />
                                         Equipment Distribution
                                     </CardTitle>
                                     <CardDescription>Count per equipment type in your dataset</CardDescription>
@@ -449,7 +449,7 @@ const Dashboard = ({ authHeader, onLogout, darkMode, toggleDarkMode }) => {
                             <Card className="lg:col-span-3">
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <Beaker className="h-5 w-5 text-secondary" />
+                                        <img src="/pie-chart.png" alt="Share" className="h-6 w-6 object-contain" />
                                         Distribution Share
                                     </CardTitle>
                                     <CardDescription>Proportion of equipment types</CardDescription>
@@ -489,11 +489,12 @@ const Dashboard = ({ authHeader, onLogout, darkMode, toggleDarkMode }) => {
                     </div>
                 )}
 
-                {/* Footer */}
-                <footer className="text-center py-6 text-sm text-muted-foreground border-t border-border mt-12">
-                    <p>Chemical Equipments Parameter Visualizer • Built with React & Shadcn UI</p>
-                </footer>
             </main>
+
+            {/* Footer */}
+            <footer className="text-center py-6 text-sm text-muted-foreground border-t border-border bg-background/50 backdrop-blur-sm">
+                <p>Chemical Equipments Parameter Visualizer • Built with React & Shadcn UI</p>
+            </footer>
         </div>
     );
 };
